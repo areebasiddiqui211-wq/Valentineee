@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine</title>
+
+<style>
+  body{
+    background:#f6c1d1;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial, sans-serif;
+  }
+
+  .card{
+    background:#fff;
+    width:340px;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+  }
+
+  h2{
+    font-size:20px;
+    margin-bottom:10px;
+  }
+
+  .buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-top:15px;
+    position:relative;
+    height:50px;
+  }
+
+  button{
+    width:120px;
+    height:42px;
+    border:none;
+    border-radius:22px;
+    font-size:15px;
+    cursor:pointer;
+  }
+
+  #yes{
+    background:#ff4d6d;
+    color:white;
+  }
+
+  #no{
+    background:#eee;
+    position:absolute;
+    right:0;
+    top:0;
+  }
+
+  .result{
+    display:none;
+    margin-top:15px;
+  }
+
+  .result img{
+    width:100%;
+    border-radius:12px;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2 id="text">
+    🐱💖<br>
+    Arsh baby will you be my valentine?
+  </h2>
+
+  <div class="buttons" id="btns">
+    <button id="yes">Yes 💘</button>
+    <button id="no">No 🙈</button>
+  </div>
+
+  <div class="result" id="result">
+    <h2>YAY! 🎉</h2>
+    <!-- EXCITED GIF -->
+    <img src="c:\Users\Lenovo\Downloads\Yay.gif" alt="Excited GIF">
+  </div>
+</div>
+
+<script>
+  const noBtn = document.getElementById("no");
+  const area = document.querySelector(".buttons");
+
+  noBtn.addEventListener("mouseenter", () => {
+    const x = Math.random() * (area.clientWidth - noBtn.offsetWidth);
+    const y = Math.random() * (area.clientHeight - noBtn.offsetHeight);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  });
+
+  document.getElementById("yes").onclick = () => {
+    document.getElementById("btns").style.display = "none";
+    document.getElementById("result").style.display = "block";
+  };
+</script>
+
+</body>
+</html>
